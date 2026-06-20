@@ -8,8 +8,10 @@
 ## 실행 링크
 
 - Frontend (GitHub Pages): [바로 실행하기](https://seeun-jang.github.io/uni-study/)
-- Backend (Azure App Service): [서버 바로가기](https://unistudyapi17227.azurewebsites.net)
-- Health Check: [서버 상태 확인](https://unistudyapi17227.azurewebsites.net/api/health)
+- Backend API Health: [서버 상태 확인](https://unistudyapi17227.azurewebsites.net/api/health)
+- Backend API Ready: [서버 준비 상태](https://unistudyapi17227.azurewebsites.net/api/ready)
+
+> 참고: 서버 루트(`/`)는 앱 라우트가 없어 오류가 날 수 있어, 정상 동작 엔드포인트 링크만 제공했습니다.
 
 ---
 
@@ -17,7 +19,11 @@
 
 앱의 메인 화면 예시입니다.
 
-![Uni-Study 메인 화면](src/assets/hero.png)
+<p align="center">
+	<img src="https://raw.githubusercontent.com/seeun-jang/uni-study/main/src/assets/hero.png" alt="Uni-Study 메인 화면" width="900" />
+</p>
+
+이미지가 보이지 않을 경우: [스크린샷 직접 열기](https://raw.githubusercontent.com/seeun-jang/uni-study/main/src/assets/hero.png)
 
 ---
 
