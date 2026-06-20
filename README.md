@@ -57,6 +57,19 @@ GitHub/Naver는 각 서비스 개발자 콘솔에서 Client ID/Secret 설정과 
 npm run build
 ```
 
+## GitHub Pages (Frontend)
+
+이 저장소는 `main` 푸시 시 GitHub Actions로 자동 배포됩니다.
+
+- 배포 워크플로: `.github/workflows/deploy-pages.yml`
+- Pages URL: `https://seeun-jang.github.io/uni-study/`
+- API URL(빌드 시 주입): `https://unistudyapi17227.azurewebsites.net`
+
+필수 설정(최초 1회):
+
+1. GitHub 저장소 `Settings > Pages` 이동
+2. `Build and deployment`의 Source를 `GitHub Actions`로 선택
+
 ## Copilot Role SDK (Backend)
 
 로그인된 사용자 토큰으로 Copilot 역할 기반 백엔드를 사용할 수 있습니다.
