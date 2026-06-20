@@ -11,7 +11,7 @@ const SETTINGS_STORAGE_KEY = 'uni-study.settings';
 const AUTH_TOKEN_STORAGE_KEY = 'uni-study.authToken';
 const REFRESH_TOKEN_STORAGE_KEY = 'uni-study.refreshToken';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:4000' : '');
 
 const FOCUS_SECONDS = 25 * 60;
 const BREAK_SECONDS = 5 * 60;

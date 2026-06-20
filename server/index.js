@@ -14,6 +14,8 @@ import { randomUUID } from 'crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const distPath = path.join(__dirname, '..', 'dist');
+const indexPath = path.join(distPath, 'index.html');
 const usersPath = path.join(__dirname, 'users.json');
 const studyDataPath = path.join(__dirname, 'study-data.json');
 const auditLogPath = path.join(__dirname, 'audit.log');
@@ -335,17 +337,6 @@ function fallbackCopilotReply({ roleId, message }) {
 
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true, message: 'Auth API is running.' });
-});
-
-app.get('/', (_req, res) => {
-  res.json({
-    ok: true,
-    message: 'Uni-Study API is running.',
-    endpoints: {
-      health: '/api/health',
-      ready: '/api/ready',
-    },
-  });
 });
 
 app.get('/api/ready', (_req, res) => {
@@ -671,8 +662,25 @@ app.put('/api/study/sync', authRequired, async (req, res) => {
   return res.json({ message: 'Study data synced.' });
 });
 
-app.use((_req, res) => {
-  return res.status(404).json({ message: 'Not found.' });
+app.use(express.static(distPath));
+
+app.get(/^\/(?!api).*/, (_req, res) => {
+  res.sendFile(indexPath, (error) => {
+    if (!error) return;
+
+    res.status(200).json({
+      ok: true,
+      message: 'Uni-Study API is running.',
+      endpoints: {
+        health: '/api/health',
+        ready: '/api/ready',
+      },
+    });
+  });
+});
+
+app.use('/api', (_req, res) => {
+  return res.status(404).json({ message: 'API route not found.' });
 });
 
 app.use((error, _req, res, _next) => {
