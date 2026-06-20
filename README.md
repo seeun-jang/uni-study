@@ -1,148 +1,143 @@
-# Uni-Study (AI Study Dashboard)
+# Uni-Study
 
-대학생 학습 루틴을 위한 웹 서비스입니다.
-로그인 기반으로 학습 데이터를 관리하고, AI 기능을 통해 질문/복습/학습 계획을 강화할 수 있도록 설계했습니다.
+대학생을 위한 AI 루틴 어플
 
----
+## 🔗 실행 링크
 
-## 실행 링크
+* Frontend: https://seeun-jang.github.io/uni-study/
 
-- Frontend (GitHub Pages): [바로 실행하기](https://seeun-jang.github.io/uni-study/)
-- Backend API Health: [서버 상태 확인](https://unistudyapi17227.azurewebsites.net/api/health)
-- Backend API Ready: [서버 준비 상태](https://unistudyapi17227.azurewebsites.net/api/ready)
+## 📌 프로젝트 소개
 
-> 참고: 서버 루트(`/`)는 앱 라우트가 없어 오류가 날 수 있어, 정상 동작 엔드포인트 링크만 제공했습니다.
+**Uni-Study**는 대학생이 공부 계획, 집중 시간, 개발 학습 기록, AI 질문 메모를 한 화면에서 관리할 수 있도록 만든 개인 생산성 향상 웹 앱입니다.
 
----
+대학생은 보통 공부 계획은 Notion에 정리하고, 개발 기록은 GitHub에 남기고, 모르는 내용은 ChatGPT 같은 AI에게 따로 질문합니다.
+하지만 이런 기록들이 여러 서비스에 흩어져 있으면 오늘 무엇을 했는지, 다음에 무엇을 해야 하는지 한눈에 확인하기 어렵습니다.
 
-## 스크린샷
+Uni-Study는 이러한 문제를 해결하기 위해 **개인 공부 루틴 + 뽀모도로 타이머, Notion 데이터베이스 연동, GitHub 학습 기록, AI 질문 도우미, 퀴즈 생성, 사용자 AI 맞춤 공모전 및 대외활동 추천 **을 하나의 대시보드로 구성했습니다.
 
-앱의 메인 화면 예시입니다.
+## 🎯 대상 사용자
 
-<p align="center">
-	<img src="https://raw.githubusercontent.com/seeun-jang/uni-study/main/src/assets/hero.png" alt="Uni-Study 메인 화면" width="900" />
-</p>
+* 과제, 시험, 자격증 공부를 동시에 관리해야 하는 대학생
+* 개발 공부와 GitHub 커밋 기록을 함께 관리하고 싶은 학생
+* 공부 계획과 집중 시간을 한 화면에서 확인하고 싶은 사용자
+* AI에게 질문할 내용을 정리해두고 싶은 사용자
 
-이미지가 보이지 않을 경우: [스크린샷 직접 열기](https://raw.githubusercontent.com/seeun-jang/uni-study/main/src/assets/hero.png)
+## 🧩 주요 기능
 
----
+### 1. 개인 공부 관리
 
-## 1. 프로젝트 개요
+* 할 일 추가
+* 완료 체크
+* 할 일 삭제
+* 과목/카테고리 선택
+* 우선순위 선택
+* 브라우저 localStorage 저장
 
-Uni-Study는 "루틴 형성 + 학습 효율 + 복습 자동화"를 목표로 한 학습 대시보드입니다.
+### 2. 뽀모도로 타이머
 
-- 학습 기록을 한 곳에서 관리
-- 인증 기반 개인 데이터 동기화
-- AI Copilot 기능으로 학습 질문/가이드 보조
+* 25분 집중
+* 5분 휴식
+* 시작 / 일시정지 / 초기화
+* 완료한 뽀모도로 횟수 기록
+* 총 집중 시간 기록
 
-## 2. 사용 기술
+### 3. Notion Sync Ready
 
-- Frontend: React, Vite
-- Backend: Node.js, Express
-- Auth/Security: JWT, bcrypt, Firebase Auth, helmet, express-rate-limit, zod
-- Deployment:
-	- Frontend: GitHub Pages (GitHub Actions)
-	- Backend: Azure App Service
+* Notion 스타일 공부 계획 섹션
+* 현재는 localStorage 기반으로 동작
+* 향후 Notion API 연동을 고려한 확장 구조
 
-## 3. 핵심 기능
+### 4. GitHub Study Log
 
-### 3-1. 인증/계정
+* 레포 이름 입력
+* 커밋 메시지 입력
+* 학습 기록 추가
+* 기록 삭제
+* 오늘의 커밋 기록 개수 확인
+* 향후 GitHub API 연동 가능
 
-- 회원가입/로그인 (ID/PW)
-- JWT Access/Refresh 토큰 인증
-- Social Login (Firebase)
-	- Google
-	- GitHub
-	- Naver (OIDC)
-- 로그인 실패 누적 시 계정 잠금
+### 5. AI Study Assistant
 
-### 3-2. 학습 대시보드
+* ChatGPT 바로가기
+* 질문 메모 작성
+* 질문 템플릿 제공
 
-- To-Do 관리
-- 뽀모도로 타이머
-- 학습 로그 캘린더
-- 퀴즈 생성 및 학습 보조 UI
-- 학습 데이터 동기화 API (`/api/study/sync`)
+  * 이 개념 쉽게 설명해줘
+  * 오늘 공부 계획 짜줘
+  * 에러 원인 분석해줘
+  * 이 코드를 리팩토링해줘
 
-### 3-3. AI Copilot
+### 6. 공모전 및 대외활동 맞춤 추천
 
-- 역할 기반 응답 API
-- `GET /api/copilot/roles`: 역할 목록 조회
-- `POST /api/copilot/chat`: 질문/문맥 기반 응답
-- `COPILOT_API_KEY` 미설정 시 로컬 fallback 응답 지원
+* AI가 사용자 맞춤 활동들을 추천
+* 공모전 및 그 외의 다양한 정보
+* 채용 공고 사이트 분석 기능도 추가할 예정  
 
-### 3-4. 안정성/보안
+## 🛠️ 사용 기술
 
-- `helmet` 보안 헤더
-- `express-rate-limit` 요청 제한
-- `zod` 요청 스키마 검증
-- `GET /api/ready`, `GET /api/health` 점검 엔드포인트
-- 감사 로그 기록 (`server/audit.log`)
+* React
+* Vite
+* JavaScript
+* CSS
+* localStorage
+* GitHub Pages
 
-## 4. 로컬 실행 방법
+## 📁 프로젝트 구조
 
-1. 의존성 설치
+```txt
+uni-study/
+├─ public/
+├─ src/
+│  ├─ App.jsx
+│  ├─ App.css
+│  ├─ main.jsx
+│  └─ index.css
+├─ package.json
+├─ vite.config.js
+└─ README.md
+```
+
+## 🚀 로컬 실행 방법
 
 ```bash
 npm install
-```
-
-2. 환경 변수 파일 생성
-
-```bash
-cp .env.example .env
-```
-
-3. 개발 서버 실행
-
-```bash
 npm run dev
 ```
 
-프론트+백엔드 동시 실행:
+브라우저에서 아래 주소로 접속합니다.
 
-```bash
-npm run dev:all
+```txt
+http://localhost:5173/
 ```
 
-## 5. 빌드/배포
-
-빌드:
+## 📦 빌드 방법
 
 ```bash
 npm run build
 ```
 
-배포:
+## 🌐 배포
 
-- `main` 브랜치 푸시 시 GitHub Pages 자동 배포
-- 워크플로: `.github/workflows/deploy-pages.yml`
+이 프로젝트는 GitHub Pages를 통해 배포했습니다.
 
-## 6. 환경 변수
+Vite 프로젝트를 GitHub Pages에서 정상적으로 실행하기 위해 `vite.config.js`에 다음 설정을 추가했습니다.
 
-### Frontend (Firebase)
+```js
+base: '/uni-study/'
+```
 
-필수 변수:
+## 🔐 개인정보 및 신뢰성 안내
 
-- `VITE_FIREBASE_API_KEY`
-- `VITE_FIREBASE_AUTH_DOMAIN`
-- `VITE_FIREBASE_PROJECT_ID`
-- `VITE_FIREBASE_APP_ID`
+* 입력한 데이터는 현재 브라우저의 localStorage에만 저장됩니다.
+* 별도의 서버나 데이터베이스로 전송되지 않습니다.
+* AI 분석과 추천 메시지는 참고용이며, 최종 판단은 사용자가 직접 해야 합니다.
+* 현재 버전은 MVP이며, 실제 Notion/GitHub/OpenAI API 연동은 향후 확장 계획입니다.
 
-선택 변수:
+## 🔮 향후 개선 방향
 
-- `VITE_FIREBASE_NAVER_PROVIDER_ID` (기본값 `oidc.naver`)
-
-### Backend (Production)
-
-- `NODE_ENV=production`
-- `AUTH_JWT_SECRET`
-- `AUTH_REFRESH_SECRET`
-- `COPILOT_API_KEY`
-- `ALLOWED_ORIGINS`
-
-## 7. 향후 개선 방향
-
-- 운영 환경에서 `NODE_ENV=production` + 필수 시크릿 강제
-- 데이터 저장소를 파일 기반에서 DB 기반으로 확장
-- 학습 추천/퀴즈 품질 향상을 위한 AI 프롬프트 고도화
+* Notion API를 활용한 실제 공부 계획 동기화
+* GitHub API를 활용한 실제 커밋 기록 자동 불러오기
+* Azure Functions 기반 `/api/analyze` 분석 API 추가
+* OpenAI 또는 Microsoft Foundry 모델을 활용한 AI 학습 코치 기능 강화
+* 사용자별 학습 데이터 저장을 위한 DB 연동
+* 로그인 기반 개인화 기능 추가
