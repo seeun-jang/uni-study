@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": "user_1781936541830",
+      "name": "테스트유저",
+      "username": "testuser1",
+      "passwordHash": "$2b$10$Emo38jHensXWMCjmuICaIesiwBqO7G.KS4dx10LfQywWVvWqem1R2",
+      "createdAt": "2026-06-20T06:22:21.830Z",
+      "refreshTokens": [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzE3ODE5MzY1NDE4MzAiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTkzNzQxOSwiZXhwIjoxNzgyNTQyMjE5fQ._K9YZ18wGtnEPOdQuN8kQ1U9O9dZJUKU1c6kUtET7yo",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzE3ODE5MzY1NDE4MzAiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTkzNzI5NSwiZXhwIjoxNzgyNTQyMDk1fQ.f58BYzRo9kgjGFnkLRYiIV28l8f6vWeQIzNh9bPfvWs"
+      ]
+    },
+    {
+      "id": "user_1781937015993",
+      "name": "퀵테스트",
+      "username": "quickuser1781937016",
+      "passwordHash": "$2b$10$ZVuKISLnwbtMu12c.1YAZejJeQSyWrat0ZZdm/tU6V3ljyi1OfzV6",
+      "createdAt": "2026-06-20T06:30:15.993Z",
+      "refreshTokens": [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzE3ODE5MzcwMTU5OTMiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTkzNzAxNiwiZXhwIjoxNzgyNTQxODE2fQ.5DuLTS5NgFyWwCLbo353yiYiTpA0E-gZCXaQHMTdWN4"
+      ]
+    },
+    {
+      "id": "user_1781937155197",
+      "name": "SDK유저",
+      "username": "sdkuser1781937155",
+      "passwordHash": "$2b$10$wBsqt8u0uNsVGFr7TwjvQ.hhcNPhycWXTSfPZBMKxYb7OaSXrgGSy",
+      "createdAt": "2026-06-20T06:32:35.197Z",
+      "refreshTokens": [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzE3ODE5MzcxNTUxOTciLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTkzNzE1NSwiZXhwIjoxNzgyNTQxOTU1fQ.KjYUgNBoQmU6OouOukgheKlxbk6Ne9ztfsgWEzBoBxk"
+      ]
+    },
+    {
+      "id": "user_1781937639567",
+      "name": "보강유저",
+      "username": "secureuser1781937637",
+      "passwordHash": "$2b$10$qVi/NvtPHwAZDX6elG4GYusruPLXgm4rkB7vKiZJJwv5knXNy1Sb6",
+      "createdAt": "2026-06-20T06:40:39.567Z",
+      "refreshTokens": [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzE3ODE5Mzc2Mzk1NjciLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTkzNzYzOSwiZXhwIjoxNzgyNTQyNDM5fQ.G8lQHtgIkuqhcvzNCLdMEgwBmyR2R9X87Tdanxn-GtI"
+      ]
+    },
+    {
+      "id": "user_1781938068375",
+      "name": "Lock Test",
+      "username": "locktestuser",
+      "passwordHash": "$2b$10$JVsaIRS/KZHJPiPOetr1Huri18I4RJR6Ltu8XctN0lXRWuxGUqL7y",
+      "failedLoginAttempts": 0,
+      "lockUntil": "2026-06-20T07:02:48.800Z",
+      "createdAt": "2026-06-20T06:47:48.375Z",
+      "refreshTokens": [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzE3ODE5MzgwNjgzNzUiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTkzODA2OCwiZXhwIjoxNzgyNTQyODY4fQ.4eg5VZZ-2VPX2Y6ThWYGa8x4CTAGcugpRsZNPribpXA"
+      ]
+    }
+  ]
+}

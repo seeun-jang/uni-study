@@ -1,0 +1,55 @@
+{
+  "user_1781937015993": {
+    "todos": [
+      {
+        "id": 1,
+        "text": "sync test",
+        "done": false
+      }
+    ],
+    "pomodoro": {
+      "mode": "focus",
+      "secondsLeft": 1500,
+      "completedPomodoros": 1,
+      "totalFocusMinutes": 25
+    },
+    "commitLogs": [],
+    "notionPlan": "sync plan",
+    "notionTasks": [],
+    "questionNote": "sync question",
+    "updatedAt": "2026-06-20T06:30:16.134Z"
+  },
+  "user_1781936541830": {
+    "todos": [],
+    "pomodoro": {
+      "mode": "focus",
+      "secondsLeft": 1500,
+      "completedPomodoros": 0,
+      "totalFocusMinutes": 0
+    },
+    "commitLogs": [],
+    "notionPlan": "",
+    "notionTasks": [
+      {
+        "id": 1,
+        "text": "오늘 할 일 3개 작성하기",
+        "done": false,
+        "createdAt": "2026-06-20T06:34:42.162Z"
+      },
+      {
+        "id": 2,
+        "text": "집중할 과목과 페이지 정하기",
+        "done": false,
+        "createdAt": "2026-06-20T06:34:42.162Z"
+      },
+      {
+        "id": 3,
+        "text": "완료 후 체크 표시 남기기",
+        "done": false,
+        "createdAt": "2026-06-20T06:34:42.162Z"
+      }
+    ],
+    "questionNote": "JWT refresh 토큰 만료 처리 전략을 3단계로 정리해줘",
+    "updatedAt": "2026-06-20T06:54:11.332Z"
+  }
+}
