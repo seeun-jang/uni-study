@@ -3,13 +3,14 @@
 
 ### 대학생을 위한 AI 루틴 
 
-#### (2026 마이크로소프트 입코딩 대회)
+#### 2026 마이크로소프트 입코딩 대회
 
 ---  
 
 ## 🔗 실행 링크
 
 * Frontend: https://seeun-jang.github.io/uni-study/
+* 서버 링크: https://unistudyapi17227.azurewebsites.net/  
 ---  
 
 ## 📌 프로젝트 소개
