@@ -1,64 +1,79 @@
-# Uni-Study
+# Uni-Study (AI Study Dashboard)
 
-대학생 학습 루틴을 위한 올인원 웹앱입니다. 할 일 관리, 타이머, 학습 기록, 퀴즈, AI 학습 도우미를 한 화면에서 사용할 수 있습니다.
+대학생 학습 루틴을 위한 웹 서비스입니다.
+로그인 기반으로 학습 데이터를 관리하고, AI 기능을 통해 질문/복습/학습 계획을 강화할 수 있도록 설계했습니다.
 
-## Live Links
+---
 
-- Frontend (GitHub Pages): https://seeun-jang.github.io/uni-study/
-- Backend API (Azure App Service): https://unistudyapi17227.azurewebsites.net
-- API Health Check: https://unistudyapi17227.azurewebsites.net/api/health
+## 실행 링크
 
-## 프로젝트 소개
+- Frontend (GitHub Pages): [바로 실행하기](https://seeun-jang.github.io/uni-study/)
+- Backend (Azure App Service): [서버 바로가기](https://unistudyapi17227.azurewebsites.net)
+- Health Check: [서버 상태 확인](https://unistudyapi17227.azurewebsites.net/api/health)
 
-Uni-Study는 "루틴 형성 + 학습 효율 + 복습 자동화"를 목표로 만든 학습 대시보드입니다.
-사용자는 로그인 후 개인 학습 데이터를 저장하고, AI 기반 기능으로 학습 계획/질문/복습 흐름을 강화할 수 있습니다.
+---
 
-## 구현된 주요 기능
+## 스크린샷
 
-### 1) 인증 및 계정
+앱의 메인 화면 예시입니다.
 
-- 아이디/비밀번호 회원가입 및 로그인
-- JWT Access/Refresh 토큰 기반 인증
+![Uni-Study 메인 화면](src/assets/hero.png)
+
+---
+
+## 1. 프로젝트 개요
+
+Uni-Study는 "루틴 형성 + 학습 효율 + 복습 자동화"를 목표로 한 학습 대시보드입니다.
+
+- 학습 기록을 한 곳에서 관리
+- 인증 기반 개인 데이터 동기화
+- AI Copilot 기능으로 학습 질문/가이드 보조
+
+## 2. 사용 기술
+
+- Frontend: React, Vite
+- Backend: Node.js, Express
+- Auth/Security: JWT, bcrypt, Firebase Auth, helmet, express-rate-limit, zod
+- Deployment:
+	- Frontend: GitHub Pages (GitHub Actions)
+	- Backend: Azure App Service
+
+## 3. 핵심 기능
+
+### 3-1. 인증/계정
+
+- 회원가입/로그인 (ID/PW)
+- JWT Access/Refresh 토큰 인증
 - Social Login (Firebase)
 	- Google
 	- GitHub
-	- Naver(OIDC)
+	- Naver (OIDC)
 - 로그인 실패 누적 시 계정 잠금
 
-### 2) 학습 대시보드 기능
+### 3-2. 학습 대시보드
 
 - To-Do 관리
 - 뽀모도로 타이머
 - 학습 로그 캘린더
 - 퀴즈 생성 및 학습 보조 UI
-- 개인 학습 데이터 동기화 (`/api/study/sync`)
+- 학습 데이터 동기화 API (`/api/study/sync`)
 
-### 3) AI Copilot 기능
+### 3-3. AI Copilot
 
-- 역할 기반 Copilot 응답 API
-- 사용 가능 역할 조회: `GET /api/copilot/roles`
-- 질문/문맥 기반 응답: `POST /api/copilot/chat`
-- `COPILOT_API_KEY`가 없을 경우 로컬 fallback 응답 지원
+- 역할 기반 응답 API
+- `GET /api/copilot/roles`: 역할 목록 조회
+- `POST /api/copilot/chat`: 질문/문맥 기반 응답
+- `COPILOT_API_KEY` 미설정 시 로컬 fallback 응답 지원
 
-### 4) 보안/운영 안정화
+### 3-4. 안정성/보안
 
-- `helmet` 보안 헤더 적용
-- `express-rate-limit` 요청 제한 (전역/인증/Copilot)
+- `helmet` 보안 헤더
+- `express-rate-limit` 요청 제한
 - `zod` 요청 스키마 검증
-- 준비 상태 점검 엔드포인트: `GET /api/ready`
-- 상태 점검 엔드포인트: `GET /api/health`
-- 감사 로그 기록: `server/audit.log`
+- `GET /api/ready`, `GET /api/health` 점검 엔드포인트
+- 감사 로그 기록 (`server/audit.log`)
 
-## 기술 스택
-
-- Frontend: React + Vite
-- Backend: Node.js + Express
-- Auth: JWT, bcrypt, Firebase Auth
-- Deployment:
-	- Frontend: GitHub Pages (GitHub Actions)
-	- Backend: Azure App Service
-
-## 로컬 실행 방법
+## 4. 로컬 실행 방법
 
 1. 의존성 설치
 
@@ -66,7 +81,7 @@ Uni-Study는 "루틴 형성 + 학습 효율 + 복습 자동화"를 목표로 만
 npm install
 ```
 
-2. 환경 변수 파일 준비
+2. 환경 변수 파일 생성
 
 ```bash
 cp .env.example .env
@@ -78,44 +93,50 @@ cp .env.example .env
 npm run dev
 ```
 
-백엔드를 함께 실행하려면:
+프론트+백엔드 동시 실행:
 
 ```bash
 npm run dev:all
 ```
 
-## 빌드 및 배포
+## 5. 빌드/배포
 
-### 빌드
+빌드:
 
 ```bash
 npm run build
 ```
 
-### GitHub Pages 배포
+배포:
 
-- `main` 브랜치에 푸시하면 자동 배포
-- 워크플로 파일: `.github/workflows/deploy-pages.yml`
+- `main` 브랜치 푸시 시 GitHub Pages 자동 배포
+- 워크플로: `.github/workflows/deploy-pages.yml`
 
-## 환경 변수 안내
+## 6. 환경 변수
 
-### Firebase (Frontend)
+### Frontend (Firebase)
 
-필수:
+필수 변수:
 
 - `VITE_FIREBASE_API_KEY`
 - `VITE_FIREBASE_AUTH_DOMAIN`
 - `VITE_FIREBASE_PROJECT_ID`
 - `VITE_FIREBASE_APP_ID`
 
-선택:
+선택 변수:
 
-- `VITE_FIREBASE_NAVER_PROVIDER_ID` (기본값: `oidc.naver`)
+- `VITE_FIREBASE_NAVER_PROVIDER_ID` (기본값 `oidc.naver`)
 
-### 서버 운영 필수 (Production)
+### Backend (Production)
 
 - `NODE_ENV=production`
 - `AUTH_JWT_SECRET`
 - `AUTH_REFRESH_SECRET`
 - `COPILOT_API_KEY`
-- `ALLOWED_ORIGINS` (프론트 도메인만 허용)
+- `ALLOWED_ORIGINS`
+
+## 7. 향후 개선 방향
+
+- 운영 환경에서 `NODE_ENV=production` + 필수 시크릿 강제
+- 데이터 저장소를 파일 기반에서 DB 기반으로 확장
+- 학습 추천/퀴즈 품질 향상을 위한 AI 프롬프트 고도화
