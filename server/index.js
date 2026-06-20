@@ -337,6 +337,17 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, message: 'Auth API is running.' });
 });
 
+app.get('/', (_req, res) => {
+  res.json({
+    ok: true,
+    message: 'Uni-Study API is running.',
+    endpoints: {
+      health: '/api/health',
+      ready: '/api/ready',
+    },
+  });
+});
+
 app.get('/api/ready', (_req, res) => {
   if (IS_PROD && !COPILOT_API_KEY) {
     return res.status(503).json({ ok: false, message: 'Copilot provider key missing.' });
@@ -660,7 +671,11 @@ app.put('/api/study/sync', authRequired, async (req, res) => {
   return res.json({ message: 'Study data synced.' });
 });
 
-app.use((error, _req, res) => {
+app.use((_req, res) => {
+  return res.status(404).json({ message: 'Not found.' });
+});
+
+app.use((error, _req, res, _next) => {
   const message = String(error?.message || 'Server error');
 
   if (message.includes('CORS blocked')) {
