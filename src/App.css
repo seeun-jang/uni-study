@@ -84,9 +84,10 @@ body.theme-dark {
 }
 
 .app {
-  max-width: 1240px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 34px 18px 46px;
+  padding: 30px 24px 46px;
+  min-height: 100vh;
   animation: pageEnter 0.55s ease;
 }
 
@@ -94,6 +95,13 @@ body.theme-dark {
   max-width: 100%;
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.app:has(> .login-screen),
+.app:has(> header.hero),
+.app:has(> .section-screen) {
+  display: grid;
+  align-content: center;
 }
 
 .intro-screen {
@@ -152,14 +160,14 @@ body.theme-dark {
   position: relative;
   min-height: calc(100vh - 78px);
   display: grid;
-  place-items: start center;
+  place-items: center;
   width: 100%;
   padding: 6px 0 12px;
   overflow: visible;
 }
 
 .login-card {
-  width: min(980px, 100%);
+  width: min(1180px, 100%);
   padding: 30px 24px;
   border-radius: 20px;
   border: 1px solid rgba(168, 154, 191, 0.3);
@@ -1840,6 +1848,17 @@ hr {
 
   .summary-metric-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1366px) {
+  .home-grid > * {
+    grid-column: span 6;
+  }
+
+  .section-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
   }
 }
 
