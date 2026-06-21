@@ -1867,6 +1867,17 @@ hr {
     grid-column: span 12;
   }
 
+  .settings-menu {
+    position: fixed;
+    top: 78px;
+    left: 12px;
+    right: 12px;
+    min-width: auto;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+    z-index: 999;
+  }
+
   .section-split {
     grid-template-columns: 1fr;
   }
