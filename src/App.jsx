@@ -1505,9 +1505,9 @@ function App() {
       <div className="section-head">
         <h2>GitHub Study Log 화면</h2>
         <div className="section-actions">
-          <a className="section-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          <a className="section-link" href="https://github.com/login" target="_blank" rel="noopener noreferrer">
             <span aria-hidden="true">💻</span>
-            GitHub 열기
+            GitHub 로그인
           </a>
           <button onClick={goHome}>뒤로가기</button>
         </div>
@@ -1517,9 +1517,9 @@ function App() {
         <div className="section-pane card">
           <h3 className="pane-title"><span className="pane-icon" aria-hidden="true">✍️</span>커밋 입력</h3>
           <div className="section-link-group">
-            <a className="section-link secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <a className="section-link secondary" href="https://github.com/login" target="_blank" rel="noopener noreferrer">
               <span aria-hidden="true">⭐</span>
-              GitHub 웹 접속
+              GitHub 로그인 페이지
             </a>
             <a className="section-link secondary" href="https://docs.github.com/" target="_blank" rel="noopener noreferrer">
               <span aria-hidden="true">📘</span>
@@ -1543,7 +1543,7 @@ function App() {
           </div>
           <p>오늘 커밋 개수: {todayCommitCount}</p>
           <p>저장된 로그: {commitLogs.length}개</p>
-          <p className="muted">향후 GitHub API 연동 가능</p>
+          <p className="muted">현재는 수동 기록 방식이며, 자동 GitHub 연동은 향후 API 연동에서 지원 예정입니다.</p>
         </div>
 
         <div className="section-pane card">

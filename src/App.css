@@ -851,7 +851,7 @@ body.theme-dark .settings-menu h4 {
 
 .section-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 18px;
@@ -863,9 +863,14 @@ body.theme-dark .settings-menu h4 {
 
 .section-head h2 {
   margin: 0;
+  flex: 1;
+  min-width: 0;
   font-size: clamp(1.16rem, 2vw, 1.36rem);
   font-weight: 800;
   letter-spacing: -0.02em;
+  line-height: 1.35;
+  word-break: keep-all;
+  overflow-wrap: normal;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -884,6 +889,7 @@ body.theme-dark .settings-menu h4 {
 .section-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
   flex-wrap: wrap;
 }
@@ -1848,6 +1854,16 @@ hr {
 
   .summary-metric-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .section-actions {
+    width: 100%;
+    justify-content: flex-end;
   }
 }
 
