@@ -1203,7 +1203,9 @@ function App() {
               </button>
 
               {isSettingsOpen && (
-                <div className="settings-menu">
+                <>
+                  <div className="menu-backdrop" onClick={() => setIsSettingsOpen(false)} />
+                  <div className="settings-menu">
                   <h4>{isEnglish ? 'Settings' : '설정'}</h4>
 
                   <label className="settings-item" htmlFor="setting-dark-mode">
@@ -1238,6 +1240,7 @@ function App() {
                     </select>
                   </label>
                 </div>
+                </>
               )}
             </div>
           </div>

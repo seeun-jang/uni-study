@@ -2045,6 +2045,12 @@ hr {
   text-decoration: underline;
 }
 
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+}
+
 body.theme-dark .intro-card,
 body.theme-dark .login-card {
   background: linear-gradient(145deg, rgba(20, 30, 46, 0.96), rgba(16, 24, 37, 0.94));
