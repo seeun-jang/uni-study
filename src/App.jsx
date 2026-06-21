@@ -1845,10 +1845,9 @@ function App() {
         <div className="section-split">
           <div className="section-pane card">
             <h3 className="pane-title"><span className="pane-icon" aria-hidden="true">🎯</span>추천 받기</h3>
-            <p>당신의 학습 현황을 바탕으로 AI가 최적의 기회를 추천합니다.</p>
+            <p>관심 카테고리를 선택하면 맞춤 기회를 추천해드립니다.</p>
 
             <div className="form-row">
-              <label htmlFor="opportunity-category">카테고리 선택</label>
               <select
                 id="opportunity-category"
                 value={opportunityCategory}
@@ -1859,30 +1858,8 @@ function App() {
               </select>
             </div>
 
-            <div className="summary-metric-grid">
-              <article className="summary-metric">
-                <p className="summary-metric-label">뽀모도로 완료</p>
-                <p className="summary-metric-value">{completedPomodoros}<span>회</span></p>
-              </article>
-
-              <article className="summary-metric">
-                <p className="summary-metric-label">집중 시간</p>
-                <p className="summary-metric-value">{totalFocusMinutes}<span>분</span></p>
-              </article>
-
-              <article className="summary-metric">
-                <p className="summary-metric-label">할 일 완료율</p>
-                <p className="summary-metric-value">{totalTodoCount > 0 ? Math.round((completedTodoCount / totalTodoCount) * 100) : 0}<span>%</span></p>
-              </article>
-
-              <article className="summary-metric">
-                <p className="summary-metric-label">오늘 커밋</p>
-                <p className="summary-metric-value">{todayCommitCount}<span>개</span></p>
-              </article>
-            </div>
-
             <div className="button-row quiz-actions">
-              <button onClick={handleGetRecommendations}>AI 추천받기</button>
+              <button onClick={handleGetRecommendations}>추천받기</button>
             </div>
           </div>
 
