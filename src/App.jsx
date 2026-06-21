@@ -404,10 +404,7 @@ function App() {
   // Home header tools
   const [isTocOpen, setIsTocOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [darkModeEnabled, setDarkModeEnabled] = useState(() => {
-    const savedSettings = safeParse(localStorage.getItem(SETTINGS_STORAGE_KEY), null);
-    return Boolean(savedSettings?.darkModeEnabled);
-  });
+  const [darkModeEnabled, setDarkModeEnabled] = useState(false);
   const [notificationsEnabled, setNotificationsEnabled] = useState(() => {
     const savedSettings = safeParse(localStorage.getItem(SETTINGS_STORAGE_KEY), null);
     return savedSettings?.notificationsEnabled !== false;
@@ -507,12 +504,11 @@ function App() {
     localStorage.setItem(
       SETTINGS_STORAGE_KEY,
       JSON.stringify({
-        darkModeEnabled,
         notificationsEnabled,
         appLanguage,
       })
     );
-  }, [darkModeEnabled, notificationsEnabled, appLanguage]);
+  }, [notificationsEnabled, appLanguage]);
 
   useEffect(() => {
     document.body.classList.toggle('theme-dark', darkModeEnabled);
