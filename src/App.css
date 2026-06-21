@@ -2017,3 +2017,156 @@ hr {
   color: var(--primary);
   text-decoration: underline;
 }
+
+body.theme-dark .intro-card,
+body.theme-dark .login-card {
+  background: linear-gradient(145deg, rgba(20, 30, 46, 0.96), rgba(16, 24, 37, 0.94));
+  border-color: rgba(126, 165, 255, 0.34);
+  box-shadow: 0 24px 44px rgba(3, 9, 19, 0.45);
+}
+
+body.theme-dark .intro-tag,
+body.theme-dark .login-card .intro-subtitle,
+body.theme-dark .social-title,
+body.theme-dark .login-form label,
+body.theme-dark .login-divider,
+body.theme-dark .mode,
+body.theme-dark .muted,
+body.theme-dark .section-pane.card p {
+  color: #b8c7db;
+}
+
+body.theme-dark .login-title {
+  color: #b9cbff;
+}
+
+body.theme-dark .social-panel,
+body.theme-dark .auth-panel,
+body.theme-dark .ai-tool-card,
+body.theme-dark .summary-hero,
+body.theme-dark .summary-metric,
+body.theme-dark .summary-recommend-card,
+body.theme-dark .month-heatmap-card,
+body.theme-dark .resource-list li,
+body.theme-dark .resource-links li,
+body.theme-dark .list li,
+body.theme-dark .quiz-item,
+body.theme-dark .quiz-empty,
+body.theme-dark .opportunity-item,
+body.theme-dark .section-head,
+body.theme-dark .section-pane.card,
+body.theme-dark .nav-card,
+body.theme-dark .card {
+  background: linear-gradient(160deg, rgba(20, 30, 46, 0.94), rgba(16, 24, 37, 0.92));
+  border-color: rgba(126, 165, 255, 0.28);
+  color: #dde7f5;
+}
+
+body.theme-dark .nav-kicker,
+body.theme-dark .summary-pill,
+body.theme-dark .opportunity-level {
+  background: rgba(126, 165, 255, 0.18);
+  border-color: rgba(126, 165, 255, 0.36);
+  color: #c9d8ff;
+}
+
+body.theme-dark .section-head h2,
+body.theme-dark .card h2,
+body.theme-dark .card h3,
+body.theme-dark .opportunity-title,
+body.theme-dark .summary-hero-score,
+body.theme-dark .summary-metric-value,
+body.theme-dark .summary-recommend-title {
+  color: #eaf1ff;
+}
+
+body.theme-dark .nav-card p,
+body.theme-dark .nav-meta,
+body.theme-dark .opportunity-desc,
+body.theme-dark .summary-hero-label,
+body.theme-dark .summary-hero-level,
+body.theme-dark .summary-metric-label,
+body.theme-dark .summary-metric-value span,
+body.theme-dark .resource-section h4,
+body.theme-dark .month-weekdays span,
+body.theme-dark .heatmap-legend,
+body.theme-dark .quiz-type,
+body.theme-dark .quiz-answer {
+  color: #aebfda;
+}
+
+body.theme-dark input,
+body.theme-dark select,
+body.theme-dark textarea,
+body.theme-dark .tab-btn,
+body.theme-dark .login-back,
+body.theme-dark .section-link.secondary {
+  background: rgba(19, 28, 42, 0.9);
+  border-color: rgba(126, 165, 255, 0.34);
+  color: #dfe8f7;
+}
+
+body.theme-dark input:focus,
+body.theme-dark select:focus,
+body.theme-dark textarea:focus {
+  background: rgba(22, 33, 49, 0.98);
+  border-color: rgba(126, 165, 255, 0.64);
+  box-shadow: 0 0 0 4px rgba(126, 165, 255, 0.2);
+}
+
+body.theme-dark .tab-btn.active,
+body.theme-dark .section-link,
+body.theme-dark .section-link:visited {
+  background: linear-gradient(180deg, rgba(126, 165, 255, 0.25), rgba(255, 158, 176, 0.22));
+  border-color: rgba(126, 165, 255, 0.46);
+  color: #dce7ff;
+}
+
+body.theme-dark .social-btn {
+  color: #e5edff;
+  border-color: rgba(126, 165, 255, 0.34);
+}
+
+body.theme-dark .social-btn.naver {
+  background: linear-gradient(180deg, rgba(75, 125, 102, 0.62), rgba(54, 99, 79, 0.72));
+}
+
+body.theme-dark .social-btn.google {
+  background: linear-gradient(180deg, rgba(71, 104, 171, 0.66), rgba(53, 82, 140, 0.74));
+}
+
+body.theme-dark .social-btn.github {
+  background: linear-gradient(180deg, rgba(108, 95, 155, 0.68), rgba(81, 70, 126, 0.76));
+}
+
+body.theme-dark .todo-list li > small {
+  background: rgba(31, 48, 74, 0.78);
+  border-color: rgba(126, 165, 255, 0.34);
+  color: #c8d7f4;
+}
+
+body.theme-dark .quiz-answer {
+  background: rgba(126, 165, 255, 0.16);
+  border: 1px solid rgba(126, 165, 255, 0.3);
+}
+
+body.theme-dark .heat-cell.lv-0 {
+  background: #1f2b3b;
+  border-color: rgba(126, 165, 255, 0.22);
+}
+
+body.theme-dark .heat-cell.lv-1 {
+  background: #2a4760;
+}
+
+body.theme-dark .heat-cell.lv-2 {
+  background: #356a87;
+}
+
+body.theme-dark .heat-cell.lv-3 {
+  background: #428ea9;
+}
+
+body.theme-dark .heat-cell.lv-4 {
+  background: #63bad6;
+}
