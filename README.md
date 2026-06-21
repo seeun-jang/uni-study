@@ -30,6 +30,41 @@ Uni-Study는 대학생의 학습 루틴을 한 화면에서 관리할 수 있도
 
 ---
 
+## 🖼️ 화면 미리보기
+
+<table>
+	<tr>
+		<td align="center" width="50%">
+			<a href="public/screenshots/logo.png">
+				<img src="public/screenshots/logo.png" alt="인트로 화면" width="100%" />
+			</a>
+			<div><strong>인트로 화면</strong></div>
+		</td>
+		<td align="center" width="50%">
+			<a href="public/screenshots/login.png">
+				<img src="public/screenshots/login.png" alt="로그인 화면" width="100%" />
+			</a>
+			<div><strong>로그인 화면</strong></div>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" width="50%">
+			<a href="public/screenshots/main.png">
+				<img src="public/screenshots/main.png" alt="메인 대시보드" width="100%" />
+			</a>
+			<div><strong>메인 대시보드</strong></div>
+		</td>
+		<td align="center" width="50%">
+			<a href="public/screenshots/settings.png">
+				<img src="public/screenshots/settings.png" alt="설정 패널" width="100%" />
+			</a>
+			<div><strong>설정 패널</strong></div>
+		</td>
+	</tr>
+</table>
+
+---
+
 ## 🎯 대상 사용자
 
 - 과제, 시험, 자격증 공부를 동시에 관리해야 하는 대학생
